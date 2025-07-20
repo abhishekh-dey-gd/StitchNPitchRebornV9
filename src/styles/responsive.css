@@ -6,7 +6,7 @@
 }
 
 .mobile-content {
-  padding-top: 64px; /* Adjust for mobile nav height */
+  padding-top: 56px; /* Adjust for mobile nav height */
 }
 
 /* Mobile Navigation Improvements */
@@ -18,8 +18,7 @@
   
   .mobile-modal {
     margin: 8px;
-    max-height: calc(100vh - 80px); /* Account for navigation */
-    margin-top: 72px; /* Space for navigation */
+    max-height: calc(100vh - 16px); /* Account for navigation */
   }
   
   .mobile-text {
@@ -41,14 +40,47 @@
 /* Desktop Modal Improvements */
 @media (min-width: 769px) {
   .desktop-modal {
-    max-height: calc(100vh - 100px); /* Account for navigation */
-    margin-top: 80px; /* Space for navigation */
+    max-height: calc(100vh - 120px); /* Account for navigation */
+    margin-top: 100px; /* Space for navigation */
   }
   
   .desktop-modal-large {
     max-width: 90vw;
-    max-height: calc(100vh - 120px);
-    margin-top: 100px;
+    max-height: calc(100vh - 140px);
+    margin-top: 110px;
+  }
+}
+
+/* Animation Performance Fixes */
+* {
+  animation-play-state: running !important;
+}
+
+/* Force animations to work */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-bounce {
+    animation: bounce 1s infinite !important;
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+  }
+  
+  .animate-spin {
+    animation: spin 1s linear infinite !important;
+  }
+}
+
+/* Override reduced motion only for essential animations */
+@media (prefers-reduced-motion: reduce) {
+  .confetti-piece,
+  .dynamic-orb,
+  [class*="bounce"],
+  [class*="pulse"],
+  [class*="glow"],
+  [class*="sparkle"] {
+    animation-duration: 0.5s !important;
+    animation-iteration-count: infinite !important;
   }
 }
 

@@ -33,6 +33,7 @@ const WinnerDisplay: React.FC<WinnerDisplayProps> = ({ winner, onBack }) => {
           
           .golden-sparkle {
             animation: golden-sparkle 2s ease-in-out infinite;
+            will-change: transform, opacity;
           }
           
           @keyframes golden-sparkle {
@@ -42,6 +43,7 @@ const WinnerDisplay: React.FC<WinnerDisplayProps> = ({ winner, onBack }) => {
           
           .winner-modal-enter {
             animation: winner-modal-enter 0.8s ease-out;
+            will-change: transform, opacity;
           }
           
           @keyframes winner-modal-enter {
@@ -57,6 +59,7 @@ const WinnerDisplay: React.FC<WinnerDisplayProps> = ({ winner, onBack }) => {
           
           .winner-bounce {
             animation: winner-bounce 0.6s ease-out;
+            will-change: transform, opacity;
           }
           
           @keyframes winner-bounce {
@@ -67,6 +70,7 @@ const WinnerDisplay: React.FC<WinnerDisplayProps> = ({ winner, onBack }) => {
           
           .star-bounce {
             animation: star-bounce 0.8s ease-out infinite;
+            will-change: transform;
           }
           
           @keyframes star-bounce {
@@ -76,6 +80,7 @@ const WinnerDisplay: React.FC<WinnerDisplayProps> = ({ winner, onBack }) => {
           
           .trophy-glow {
             animation: trophy-glow 2s ease-in-out infinite;
+            will-change: box-shadow;
           }
           
           @keyframes trophy-glow {
@@ -90,7 +95,7 @@ const WinnerDisplay: React.FC<WinnerDisplayProps> = ({ winner, onBack }) => {
         onClick={onBack}
       >
         <div 
-          className="golden-glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl text-center winner-modal-enter relative my-auto mt-20"
+          className="golden-glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-lg w-full max-h-[75vh] overflow-y-auto shadow-2xl text-center winner-modal-enter relative my-auto mt-24"
           onClick={handleModalClick}
         >
           

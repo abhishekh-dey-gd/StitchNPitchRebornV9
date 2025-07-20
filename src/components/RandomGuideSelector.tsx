@@ -107,9 +107,9 @@ const RandomGuideSelector: React.FC<RandomGuideSelectorProps> = ({
             </div>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 animate-bounce flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-yellow-400 animate-pulse" />
+            <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-yellow-400 animate-pulse" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
             Stitch n Pitch
-            <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-yellow-400 animate-pulse" />
+            <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-yellow-400 animate-pulse" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-200 font-medium px-4">
             Choose your department and pick a random guide for audit

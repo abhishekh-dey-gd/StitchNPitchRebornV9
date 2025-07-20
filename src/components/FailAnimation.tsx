@@ -55,6 +55,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
           
           .red-pulse {
             animation: red-pulse 1.5s ease-in-out infinite;
+            will-change: transform, opacity;
           }
           
           @keyframes red-pulse {
@@ -64,6 +65,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
           
           .fail-bounce {
             animation: fail-bounce 0.8s ease-out;
+            will-change: transform, opacity;
           }
           
           @keyframes fail-bounce {
@@ -74,6 +76,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
           
           .fail-shake {
             animation: fail-shake 0.5s ease-in-out infinite;
+            will-change: transform;
           }
           
           @keyframes fail-shake {
@@ -84,6 +87,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
           
           .fail-float {
             animation: fail-float 2s ease-in-out infinite;
+            will-change: transform;
           }
           
           @keyframes fail-float {
@@ -93,6 +97,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
           
           .fail-emoji {
             animation: fail-emoji-spin 1s linear infinite;
+            will-change: transform;
           }
           
           @keyframes fail-emoji-spin {
@@ -107,7 +112,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
         onClick={handleClose}
       >
         <div 
-          className="red-glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl text-center fail-bounce relative my-auto mt-20"
+          className="red-glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-lg w-full max-h-[75vh] overflow-y-auto shadow-2xl text-center fail-bounce relative my-auto mt-24"
           onClick={handleModalClick}
         >
           

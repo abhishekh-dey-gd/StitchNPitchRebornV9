@@ -25,7 +25,7 @@ interface TimelineData {
 
 const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, onClose, eliteWinners }) => {
   const [activeChart, setActiveChart] = useState<'bar' | 'pie' | 'timeline'>('bar');
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(true);
   const [animationPhase, setAnimationPhase] = useState(0);
 
   useEffect(() => {
@@ -35,7 +35,6 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
       const timer1 = setTimeout(() => setAnimationPhase(1), 500);
       const timer2 = setTimeout(() => setAnimationPhase(2), 1000);
       const timer3 = setTimeout(() => setAnimationPhase(3), 1500);
-      // Keep confetti running continuously while dashboard is open
       
       return () => {
         clearTimeout(timer1);
@@ -45,10 +44,11 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
     }
   }, [isOpen]);
 
-  // Stop confetti when dashboard closes
   useEffect(() => {
     if (!isOpen) {
       setShowConfetti(false);
+    } else {
+      setShowConfetti(true);
     }
   }, [isOpen]);
 
@@ -137,14 +137,17 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
           
           .elite-chart-animate-1 {
             animation: elite-chart-slide-in 0.6s ease-out 0.5s both;
+            will-change: transform, opacity;
           }
           
           .elite-chart-animate-2 {
             animation: elite-chart-slide-in 0.6s ease-out 1s both;
+            will-change: transform, opacity;
           }
           
           .elite-chart-animate-3 {
             animation: elite-chart-slide-in 0.6s ease-out 1.5s both;
+            will-change: transform, opacity;
           }
           
           @keyframes elite-chart-slide-in {
@@ -160,6 +163,7 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
           
           .elite-stat-card-animate {
             animation: elite-stat-bounce 0.8s ease-out;
+            will-change: transform;
           }
           
           @keyframes elite-stat-bounce {
@@ -174,6 +178,7 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
           
           .elite-pulse-glow {
             animation: elite-pulse-glow 2s ease-in-out infinite;
+            will-change: box-shadow;
           }
           
           @keyframes elite-pulse-glow {
@@ -211,9 +216,9 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
               </div>
               <div>
                 <h1 className="text-2xl md:text-4xl font-bold text-white flex items-center gap-1 md:gap-2">
-                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" />
+                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
                   Elite Winners Dashboard
-                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" />
+                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
                 </h1>
                 <p className="text-orange-200 text-sm md:text-lg">Elite spiral analytics and insights</p>
               </div>

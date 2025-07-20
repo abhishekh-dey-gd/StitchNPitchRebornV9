@@ -34,7 +34,7 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
 }) => {
   const [activeChart, setActiveChart] = useState<'bar' | 'pie'>('bar');
   const [showEliteAnalytics, setShowEliteAnalytics] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(true);
   const [animationPhase, setAnimationPhase] = useState(0);
 
   useEffect(() => {
@@ -44,7 +44,6 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
       const timer1 = setTimeout(() => setAnimationPhase(1), 500);
       const timer2 = setTimeout(() => setAnimationPhase(2), 1000);
       const timer3 = setTimeout(() => setAnimationPhase(3), 1500);
-      // Keep confetti running continuously while dashboard is open
       
       return () => {
         clearTimeout(timer1);
@@ -54,10 +53,11 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
     }
   }, [isOpen]);
 
-  // Stop confetti when dashboard closes
   useEffect(() => {
     if (!isOpen) {
       setShowConfetti(false);
+    } else {
+      setShowConfetti(true);
     }
   }, [isOpen]);
 
@@ -120,14 +120,17 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
           
           .chart-animate-1 {
             animation: chart-slide-in 0.6s ease-out 0.5s both;
+            will-change: transform, opacity;
           }
           
           .chart-animate-2 {
             animation: chart-slide-in 0.6s ease-out 1s both;
+            will-change: transform, opacity;
           }
           
           .chart-animate-3 {
             animation: chart-slide-in 0.6s ease-out 1.5s both;
+            will-change: transform, opacity;
           }
           
           @keyframes chart-slide-in {
@@ -143,6 +146,7 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
           
           .stat-card-animate {
             animation: stat-bounce 0.8s ease-out;
+            will-change: transform;
           }
           
           @keyframes stat-bounce {
@@ -157,6 +161,7 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
           
           .pulse-glow {
             animation: pulse-glow 2s ease-in-out infinite;
+            will-change: box-shadow;
           }
           
           @keyframes pulse-glow {
@@ -202,9 +207,9 @@ const WinHistoryDashboard: React.FC<WinHistoryDashboardProps> = ({
               </div>
               <div>
                 <h1 className="text-2xl md:text-4xl font-bold text-white flex items-center gap-1 md:gap-2">
-                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" />
+                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
                   {showEliteAnalytics ? 'Elite Winners Dashboard' : 'Win History Dashboard'}
-                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" />
+                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-yellow-400 animate-pulse" style={{ animationDuration: '2s', animationIterationCount: 'infinite' }} />
                 </h1>
                 <p className={`text-sm md:text-lg ${showEliteAnalytics ? 'text-orange-200' : 'text-blue-200'}`}>
                   {showEliteAnalytics ? 'Elite spiral analytics and insights' : 'Visual analytics and insights'}

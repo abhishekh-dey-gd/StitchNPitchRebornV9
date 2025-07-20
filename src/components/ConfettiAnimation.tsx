@@ -8,7 +8,7 @@ const ConfettiAnimation: React.FC<ConfettiAnimationProps> = ({ isActive }) => {
   if (!isActive) return null;
 
   // Generate confetti pieces
-  const confettiPieces = Array.from({ length: 50 }, (_, i) => (
+  const confettiPieces = Array.from({ length: 60 }, (_, i) => (
     <div
       key={i}
       className={`confetti-piece confetti-piece-${i % 6}`}
@@ -26,23 +26,47 @@ const ConfettiAnimation: React.FC<ConfettiAnimationProps> = ({ isActive }) => {
         {`
           .confetti-piece {
             position: fixed;
-            width: 10px;
-            height: 10px;
-            top: -10px;
-            z-index: 1000;
+            width: 12px;
+            height: 12px;
+            top: -20px;
+            z-index: 9999;
             animation: confetti-fall linear infinite;
+            will-change: transform;
           }
           
-          .confetti-piece-0 { background: #f97316; }
-          .confetti-piece-1 { background: #10b981; }
-          .confetti-piece-2 { background: #ec4899; }
-          .confetti-piece-3 { background: #3b82f6; }
-          .confetti-piece-4 { background: #f59e0b; }
-          .confetti-piece-5 { background: #8b5cf6; }
+          .confetti-piece-0 { 
+            background: #f97316; 
+            border-radius: 50%;
+          }
+          .confetti-piece-1 { 
+            background: #10b981; 
+            border-radius: 0;
+          }
+          .confetti-piece-2 { 
+            background: #ec4899; 
+            border-radius: 50%;
+          }
+          .confetti-piece-3 { 
+            background: #3b82f6; 
+            border-radius: 0;
+          }
+          .confetti-piece-4 { 
+            background: #f59e0b; 
+            border-radius: 50%;
+          }
+          .confetti-piece-5 { 
+            background: #8b5cf6; 
+            border-radius: 0;
+          }
           
           @keyframes confetti-fall {
-            to {
+            0% {
+              transform: translateY(-20px) rotate(0deg);
+              opacity: 1;
+            }
+            100% {
               transform: translateY(100vh) rotate(720deg);
+              opacity: 0.8;
             }
           }
           
@@ -57,7 +81,7 @@ const ConfettiAnimation: React.FC<ConfettiAnimationProps> = ({ isActive }) => {
           }
         `}
       </style>
-      <div className="fixed inset-0 pointer-events-none z-50">
+      <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
         {confettiPieces}
       </div>
     </>
