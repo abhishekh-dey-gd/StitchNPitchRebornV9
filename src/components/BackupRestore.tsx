@@ -376,7 +376,7 @@ const BackupRestore: React.FC<BackupRestoreProps> = ({
         onClick={onClose}
       >
         <div 
-          className="bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20 rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl backup-modal-enter"
+          className="bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20 rounded-3xl p-8 max-w-4xl w-full max-h-[85vh] overflow-y-auto shadow-2xl backup-modal-enter desktop-modal"
           onClick={handleModalClick}
         >
           {/* Header */}

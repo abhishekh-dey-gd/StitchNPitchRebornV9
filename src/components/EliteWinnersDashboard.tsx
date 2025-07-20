@@ -35,14 +35,20 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
       const timer1 = setTimeout(() => setAnimationPhase(1), 500);
       const timer2 = setTimeout(() => setAnimationPhase(2), 1000);
       const timer3 = setTimeout(() => setAnimationPhase(3), 1500);
-      const confettiTimer = setTimeout(() => setShowConfetti(false), 3000);
+      // Keep confetti running continuously while dashboard is open
       
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
         clearTimeout(timer3);
-        clearTimeout(confettiTimer);
       };
+    }
+  }, [isOpen]);
+
+  // Stop confetti when dashboard closes
+  useEffect(() => {
+    if (!isOpen) {
+      setShowConfetti(false);
     }
   }, [isOpen]);
 
@@ -194,7 +200,7 @@ const EliteWinnersDashboard: React.FC<EliteWinnersDashboardProps> = ({ isOpen, o
         onClick={handleClose}
       >
         <div 
-          className="bg-gradient-to-br from-yellow-900 via-orange-900 to-amber-900 bg-opacity-95 backdrop-blur-xl border border-white border-opacity-20 rounded-3xl p-4 md:p-8 max-w-7xl w-full max-h-[90vh] overflow-y-auto shadow-2xl elite-dashboard-enter"
+          className="bg-gradient-to-br from-yellow-900 via-orange-900 to-amber-900 bg-opacity-95 backdrop-blur-xl border border-white border-opacity-20 rounded-3xl p-4 md:p-8 max-w-7xl w-full max-h-[85vh] overflow-y-auto shadow-2xl elite-dashboard-enter desktop-modal-large"
           onClick={handleModalClick}
         >
           {/* Header */}

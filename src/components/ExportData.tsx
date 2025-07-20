@@ -666,7 +666,7 @@ const ExportData: React.FC<ExportDataProps> = ({ isOpen, onClose, winners, loser
         onClick={onClose}
       >
         <div 
-          className="bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[95vh] overflow-y-auto shadow-2xl export-modal-enter"
+          className="bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[85vh] overflow-y-auto shadow-2xl export-modal-enter desktop-modal"
           onClick={handleModalClick}
         >
           {/* Header */}

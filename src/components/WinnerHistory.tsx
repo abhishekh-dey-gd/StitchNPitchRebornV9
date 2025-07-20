@@ -180,7 +180,7 @@ const WinnerHistory: React.FC<WinnerHistoryProps> = ({ winners, eliteWinners, on
   };
 
   return (
-    <div className="pt-16 sm:pt-20 md:pt-24 pb-8 px-2 sm:px-4">
+    <div className="pt-16 sm:pt-18 md:pt-20 lg:pt-24 pb-8 px-2 sm:px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
@@ -195,12 +195,12 @@ const WinnerHistory: React.FC<WinnerHistoryProps> = ({ winners, eliteWinners, on
               <Trophy className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-yellow-300" />
             )}
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
             {showEliteWinners ? (
               <>
-                <Crown className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-yellow-400" />
+                <Crown className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-yellow-400" />
                 Elite Winners History
-                <Crown className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-yellow-400" />
+                <Crown className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-yellow-400" />
               </>
             ) : (
               <>
@@ -208,7 +208,7 @@ const WinnerHistory: React.FC<WinnerHistoryProps> = ({ winners, eliteWinners, on
               </>
             )}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-purple-200">
+          <p className="text-sm sm:text-base md:text-lg text-purple-200">
             {currentData.length} {showEliteWinners ? 'Elite' : ''} {currentData.length === 1 ? 'Winner' : 'Winners'} Selected So Far
           </p>
         </div>

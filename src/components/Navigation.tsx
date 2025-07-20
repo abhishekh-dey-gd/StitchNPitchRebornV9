@@ -31,7 +31,7 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-20 backdrop-blur-md border-b border-white border-opacity-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-18 lg:h-20">
           {/* Logo - Clickable */}
           <button 
             onClick={handleLogoClick}
@@ -41,11 +41,11 @@ const Navigation: React.FC<NavigationProps> = ({
               <img 
                 src="/stitch-n-pitch-logo.png" 
                 alt="Stitch n Pitch Logo" 
-                className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 rounded-lg sm:rounded-xl object-cover drop-shadow-lg border-2 border-white border-opacity-30"
+                className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 rounded-lg sm:rounded-xl object-cover drop-shadow-lg border-2 border-white border-opacity-30"
               />
             </div>
             <div className="hidden xs:block">
-              <h1 className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-white">
+              <h1 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-white">
                 <span className="hidden sm:inline">Stitch n Pitch Portal</span>
                 <span className="sm:hidden">Stitch n Pitch</span>
               </h1>

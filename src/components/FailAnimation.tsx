@@ -107,7 +107,7 @@ const FailAnimation: React.FC<FailAnimationProps> = ({ isActive, guideName, onCl
         onClick={handleClose}
       >
         <div 
-          className="red-glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-2xl w-full max-h-[95vh] overflow-y-auto shadow-2xl text-center fail-bounce relative my-auto"
+          className="red-glass-morphism rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl text-center fail-bounce relative my-auto mt-20"
           onClick={handleModalClick}
         >
           

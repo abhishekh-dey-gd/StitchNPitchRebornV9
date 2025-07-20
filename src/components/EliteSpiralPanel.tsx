@@ -143,26 +143,26 @@ const EliteSpiralPanel: React.FC<EliteSpiralPanelProps> = ({ winners, eliteWinne
 
 
   return (
-    <div className="pt-20 pb-8 px-4">
+    <div className="pt-16 sm:pt-18 md:pt-20 lg:pt-24 pb-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
             <div className="relative">
               <div className="p-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full shadow-2xl">
-                <Crown className="h-16 w-16 text-white" />
+                <Crown className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-white" />
               </div>
               <div className="absolute -top-2 -right-2">
-                <Sparkles className="w-8 h-8 text-yellow-300 animate-pulse" />
+                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-300 animate-pulse" />
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 flex items-center justify-center gap-4">
-            <Sparkles className="w-12 h-12 text-yellow-400 animate-pulse" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-yellow-400 animate-pulse" />
             Elite's Spiral
-            <Sparkles className="w-12 h-12 text-yellow-400 animate-pulse" />
+            <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-yellow-400 animate-pulse" />
           </h1>
-          <p className="text-xl md:text-2xl text-purple-200 font-medium">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-200 font-medium px-4">
             Spin the wheel with existing winners for elite selection
           </p>
         </div>

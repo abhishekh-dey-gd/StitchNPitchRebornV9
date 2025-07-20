@@ -19,8 +19,8 @@ const DynamicOrbs: React.FC = () => {
       'from-teal-400 to-cyan-600',
       'from-emerald-400 to-teal-600'
     ][i % 12],
-    duration: Math.random() * 25 + 20, // 20-45s
-    delay: Math.random() * 15, // 0-15s delay
+    duration: Math.random() * 15 + 20, // 20-35s (slower)
+    delay: Math.random() * 10, // 0-10s delay
     startX: Math.random() * 100,
     startY: Math.random() * 100,
     direction: Math.random() > 0.5 ? 1 : -1 // Random direction
@@ -36,16 +36,16 @@ const DynamicOrbs: React.FC = () => {
               opacity: 0.3;
             }
             25% { 
-              transform: translate(300px, -200px) rotate(90deg) scale(1.2); 
-              opacity: 0.6;
+              transform: translate(200px, -150px) rotate(90deg) scale(1.1); 
+              opacity: 0.5;
             }
             50% { 
-              transform: translate(-150px, -400px) rotate(180deg) scale(0.8); 
+              transform: translate(-100px, -300px) rotate(180deg) scale(0.9); 
               opacity: 0.4;
             }
             75% { 
-              transform: translate(-350px, -150px) rotate(270deg) scale(1.1); 
-              opacity: 0.7;
+              transform: translate(-250px, -100px) rotate(270deg) scale(1.05); 
+              opacity: 0.6;
             }
             100% { 
               transform: translate(0, 0) rotate(360deg) scale(1); 
@@ -59,16 +59,16 @@ const DynamicOrbs: React.FC = () => {
               opacity: 0.3;
             }
             25% { 
-              transform: translate(-300px, -200px) rotate(-90deg) scale(1.2); 
-              opacity: 0.6;
+              transform: translate(-200px, -150px) rotate(-90deg) scale(1.1); 
+              opacity: 0.5;
             }
             50% { 
-              transform: translate(150px, -400px) rotate(-180deg) scale(0.8); 
+              transform: translate(100px, -300px) rotate(-180deg) scale(0.9); 
               opacity: 0.4;
             }
             75% { 
-              transform: translate(350px, -150px) rotate(-270deg) scale(1.1); 
-              opacity: 0.7;
+              transform: translate(250px, -100px) rotate(-270deg) scale(1.05); 
+              opacity: 0.6;
             }
             100% { 
               transform: translate(0, 0) rotate(-360deg) scale(1); 
@@ -78,10 +78,10 @@ const DynamicOrbs: React.FC = () => {
           
           @keyframes pulse-glow {
             0%, 100% { 
-              filter: blur(25px) brightness(1); 
+              filter: blur(20px) brightness(1); 
             }
             50% { 
-              filter: blur(35px) brightness(1.3); 
+              filter: blur(30px) brightness(1.2); 
             }
           }
           
@@ -91,14 +91,17 @@ const DynamicOrbs: React.FC = () => {
             pointer-events: none;
             z-index: 0;
             will-change: transform, opacity;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
           }
           
           .floating-orb-normal {
-            animation: float-around linear infinite, pulse-glow ease-in-out infinite;
+            animation-name: float-around, pulse-glow;
           }
           
           .floating-orb-reverse {
-            animation: float-around-reverse linear infinite, pulse-glow ease-in-out infinite;
+            animation-name: float-around-reverse, pulse-glow;
           }
         `}
       </style>
@@ -112,7 +115,7 @@ const DynamicOrbs: React.FC = () => {
               height: `${orb.size}px`,
               left: `${orb.startX}%`,
               top: `${orb.startY}%`,
-              animationDuration: `${orb.duration}s, ${orb.duration * 0.6}s`,
+              animationDuration: `${orb.duration}s, ${orb.duration * 0.8}s`,
               animationDelay: `${orb.delay}s, ${orb.delay * 0.5}s`
             }}
           />

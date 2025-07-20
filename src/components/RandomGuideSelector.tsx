@@ -93,7 +93,7 @@ const RandomGuideSelector: React.FC<RandomGuideSelectorProps> = ({
   const availableGuides = departmentGuides.filter(guide => !winnerGuideIds.has(guide.id));
 
   return (
-    <div className="pt-20 pb-8 px-4">
+    <div className="pt-16 sm:pt-18 md:pt-20 lg:pt-24 pb-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header with Logo */}
         <div className="text-center mb-12">
@@ -102,16 +102,16 @@ const RandomGuideSelector: React.FC<RandomGuideSelectorProps> = ({
               <img 
                 src="/stitch-n-pitch-logo.png" 
                 alt="Stitch n Pitch Logo" 
-                className="h-24 w-24 rounded-2xl object-cover drop-shadow-2xl border-4 border-white border-opacity-50"
+                className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-2xl object-cover drop-shadow-2xl border-4 border-white border-opacity-50"
               />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-bounce flex items-center justify-center gap-4">
-            <Sparkles className="w-16 h-16 text-yellow-400 animate-pulse" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 animate-bounce flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-yellow-400 animate-pulse" />
             Stitch n Pitch
-            <Sparkles className="w-16 h-16 text-yellow-400 animate-pulse" />
+            <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-yellow-400 animate-pulse" />
           </h1>
-          <p className="text-xl md:text-2xl text-purple-200 font-medium">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-200 font-medium px-4">
             Choose your department and pick a random guide for audit
           </p>
         </div>
